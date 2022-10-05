@@ -1,2 +1,2 @@
-# objectmodel
+# object-model
 Universal programming language.
