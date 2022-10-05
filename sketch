@@ -1,0 +1,141 @@
+// Comments
+	
+	// This is a one-line comment, like usual.
+	/*
+		This is a
+		multi-line comment, like usual.
+	*/
+	
+// Whitespace can be represented by one or more units of whitespace.
+	
+// Parentheses group things together, as usual.
+
+// Curly braces begin and end a scope, as usual.
+	
+/* Identifiers (for Variables (including properties)/functions (including
+	methods)/class names/constants) */
+/^[a-zA-Z_]{1}[0-9a-zA-Z_]*$/
+	
+// Statements are terminated by semicolons, as usual (except for }).
+
+// Functions are called as usual:
+myFunc(
+	someVar,
+	someVar2
+);
+
+// Control structures
+	
+	// if - same as usual
+	if (someVar) {/* Do something here. */}
+	
+	// switch - same as usual
+	switch (someVar) {
+		
+		case "something":
+			doSomething();
+			break;
+		
+	}
+	
+	// for - same as usual
+	for (
+		i = 0;
+		i < someVar;
+		i++
+	) {/* Do something here. */}
+	
+// Objects
+	
+	/*
+		Objects can (generically) be created as usual:
+			Objects without class have a class name of null (otherwise a string
+				identifier)
+			Objects have the type (string) of "object"
+	*/
+	myObject = {
+		identifier: "Hello world",
+		identifier2: true
+	};
+	
+	// Classes are quite as usual:
+	class MyClass extends SomeOtherClass {
+		
+		// Properties look like usual:
+		public static bool|null myProperty = true;
+		
+		// Constructors are called "constructor"
+		private static function constructor() {}
+		
+	}
+	
+	/*
+		Objects are accessed via dot-syntax.
+		Statements are terminated by a semi-colon, like usual.
+	*/
+	Object.someProp;
+	
+	// Methods are called the same as functions, except as a child
+	Object.someMethod(
+		Object.someProp,
+		Object.someOtherProp
+	);
+	
+// Arrays
+	
+	// Arrays can be created with the shorthand syntax:
+	myArray = [
+		new MyClass,
+		["Hello world"]
+	];
+	
+	// Arrays only have int keys
+	myArray[0] = "Hello world"; // Valid
+	
+// String
+	
+	// Strings are just like any other string
+	myString = "my string"; // Or 'my string'
+	
+	// Strings can be concatenated with the + operator
+	myString = "Hello" + " " + "world";
+	
+	// @todo - Write functions for handling strings.
+	
+// number
+	
+	// int
+	myInt = 1;
+	
+	// float
+	myFloat = 1.1;
+		
+		// Floats convert to ints automatically (e.g. 1.0 converts to 1).
+		
+	// Operators include +, -, /, *, <, <=, >, and >=.
+	
+	// Conversion
+		
+		// string
+			
+			// Converts to the same "string" (e.g. 1 converts to "1").
+			
+// bool
+	
+	// Operators include !.
+	
+	// Conversion
+		
+		// number
+			
+			// true converts to 1.
+			
+			// false converts to 0.
+			
+// null
+	
+	// Conversion
+		
+		// bool
+			
+			// Converts to true.
