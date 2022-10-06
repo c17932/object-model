@@ -7,16 +7,17 @@
 	*/
 	
 // Whitespace can be represented by one or more units of whitespace.
-	
+
 // Parentheses group things together, as usual.
 
 // Curly braces begin and end a scope, as usual.
-	
+
 /* Identifiers (for Variables (including properties)/functions (including
 	methods)/class names/constants) */
 /^[a-zA-Z_]{1}[0-9a-zA-Z_]*$/
-	
+
 // Statements are terminated by semicolons, as usual (except for }).
+someStatement();
 
 // Functions are called as usual:
 myFunc(
@@ -27,7 +28,15 @@ myFunc(
 // Control structures
 	
 	// if - same as usual
-	if (someVar) {/* Do something here. */}
+	if (someVar) {
+		
+		/* Do something here. */
+		
+	} else if (someOtherVar) {
+		
+		/* Do something else here. */
+		
+	}
 	
 	// switch - same as usual
 	switch (someVar) {
@@ -35,7 +44,7 @@ myFunc(
 		case "something":
 			doSomething();
 			break;
-		
+			
 	}
 	
 	// for - same as usual
@@ -50,8 +59,8 @@ myFunc(
 	/*
 		Objects can (generically) be created as usual:
 			Objects without class have a class name of null (otherwise a string
-				identifier)
-			Objects have the type (string) of "object"
+				identifier).
+			Objects have the type of "object".
 	*/
 	myObject = {
 		identifier: "Hello world",
@@ -81,6 +90,11 @@ myFunc(
 		Object.someOtherProp
 	);
 	
+	// Conversion
+		
+		/* object converts to mixed array such that array["propName"] =
+			propValue; */
+			
 // Arrays
 	
 	// Arrays can be created with the shorthand syntax:
@@ -89,9 +103,17 @@ myFunc(
 		["Hello world"]
 	];
 	
-	// Arrays only have int keys
-	myArray[0] = "Hello world"; // Valid
+	// Arrays can have int/string keys
+	myArray[0] = "Hello world";
+	myArray["some key"] = "Hello world";
 	
+	// Conversion
+		
+		// array converts to an object with special keys (i.e. myObj{"0"})
+		
+		/* array converts to string such that the string values of the arrays
+			elements are strung together into a single string */
+			
 // String
 	
 	// Strings are just like any other string
@@ -102,6 +124,13 @@ myFunc(
 	
 	// @todo - Write functions for handling strings.
 	
+	// Conversion
+		
+		// string converts to an array of characters
+		
+		/* string representation of numbers are directly translated to their
+		 	number forms, all else translates to the int 1 */
+			
 // number
 	
 	// int
@@ -110,23 +139,24 @@ myFunc(
 	// float
 	myFloat = 1.1;
 		
-		// Floats convert to ints automatically (e.g. 1.0 converts to 1).
-		
+		/* Floats convert to ints automatically (e.g. the float 1.0 converts to
+			the int 1). */
+			
 	// Operators include +, -, /, *, <, <=, >, and >=.
 	
 	// Conversion
 		
-		// string
-			
-			// Converts to the same "string" (e.g. 1 converts to "1").
-			
+		// number translates to an equivalent string (1.5 = "1.5")
+		
+		// number translates to true if positive, false otherwise
+		
 // bool
 	
-	// Operators include !.
+	// Operators include !, ==, and !=.
 	
 	// Conversion
 		
-		// number
+		// int
 			
 			// true converts to 1.
 			
@@ -136,6 +166,4 @@ myFunc(
 	
 	// Conversion
 		
-		// bool
-			
-			// Converts to true.
+		// Converts to true.
