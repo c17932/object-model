@@ -1,169 +1,245 @@
-// Comments
+// Object Model - "The" universal programming language
 	
-	// This is a one-line comment, like usual.
-	/*
-		This is a
-		multi-line comment, like usual.
-	*/
-	
-// Whitespace can be represented by one or more units of whitespace.
-
-// Parentheses group things together, as usual.
-
-// Curly braces begin and end a scope, as usual.
-
-/* Identifiers (for Variables (including properties)/functions (including
-	methods)/class names/constants) */
-/^[a-zA-Z_]{1}[0-9a-zA-Z_]*$/
-
-// Statements are terminated by semicolons, as usual (except for }).
-someStatement();
-
-// Functions are called as usual:
-myFunc(
-	someVar,
-	someVar2
-);
-
-// Control structures
-	
-	// if - same as usual
-	if (someVar) {
+	// Types
 		
-		/* Do something here. */
-		
-	} else if (someOtherVar) {
-		
-		/* Do something else here. */
-		
-	}
-	
-	// switch - same as usual
-	switch (someVar) {
-		
-		case "something":
-			doSomething();
-			break;
+		// scalar
 			
-	}
-	
-	// for - same as usual
-	for (
-		i = 0;
-		i < someVar;
-		i++
-	) {/* Do something here. */}
-	
-// Objects
-	
-	/*
-		Objects can (generically) be created as usual:
-			Objects without class have a class name of null (otherwise a string
-				identifier).
-			Objects have the type of "object".
-	*/
-	myObject = {
-		identifier: "Hello world",
-		identifier2: true
-	};
-	
-	// Classes are quite as usual:
-	class MyClass extends SomeOtherClass {
-		
-		// Properties look like usual:
-		public static bool|null myProperty = true;
-		
-		// Constructors are called "constructor"
-		private static function constructor() {}
-		
-	}
-	
-	/*
-		Objects are accessed via dot-syntax.
-		Statements are terminated by a semi-colon, like usual.
-	*/
-	Object.someProp;
-	
-	// Methods are called the same as functions, except as a child
-	Object.someMethod(
-		Object.someProp,
-		Object.someOtherProp
-	);
-	
-	// Conversion
-		
-		/* object converts to mixed array such that array["propName"] =
-			propValue; */
+			// null
+				
+				// Regular expression
+				/null/
+				
+				// Conversion
+					
+					// boolean
+						
+						// Converts to true
+						
+			// boolean
+				
+				// Regular expressions
+					
+					// true
+					/true/
+					
+					// false
+					/false/
+					
+				// Operators
+				 	
+					// !
+					
+					// &
+					
+					// |
+					
+				// Conversion
+					
+					// integer
+						
+						// true converts to 1
+						
+						// false converts to 0
+						
+				// Control structures
+					
+					// if - same as usual
+					if (someVar) {
+						
+						// Do something here
+						
+					} else if (someOtherVar) {
+						
+						// Do something else here
+						
+					} else {
+						
+						// Do something else
+						
+					}
+					
+			// number
+				
+				// Regular expression
+				/^(-?(\d*)+(\.(\d*))?)$/ /// @todo: Untested
+				
+				// Types
+					
+					// integer
+					myInt = 1;
+					
+					// float
+					myFloat = 1.1;
+						
+						/* Floats convert to integers automatically (e.g. the
+							float 1.0 converts to the integer 1) */
+							
+				// Operators
+					
+					// +
+					
+					// -
+					
+					// /
+					
+					// *
+					
+					// <
+					
+					// >
+					
+				// Conversion
+					
+					// number translates to true if positive, false otherwise
+					
+					// number translates to an equivalent string (1.5 = "1.5")
+					
+			// string
+				
+				// Basic form
+					
+					// Strings are just like any other string:
+					myString = "Hello world"; // Or 'Hello world'
+					
+					// Strings can be concatenated with the + operator:
+					myString = "Hello" + " " + "world";
+					
+				// Object Model general syntax
+					
+					// Comments
+						
+						// This is a one-line comment, like usual
+						/*
+							This is a
+							multi-line comment, like usual
+						*/
+						
+					/* Whitespace can be represented by one or more units of
+						whitespace */
+						
+					// Parentheses group things together, as usual
+					
+					// Curly braces begin and end a scope, as usual
+					
+					/* Identifiers (for Variables (including properties)/
+						functions (including methods)/class names/constants) */
+					/^[a-zA-Z_]{1}[0-9a-zA-Z_]*$/
+					
+					/* Statements are terminated by semicolons, as usual (except
+						for }) */
+					someStatement();
+					
+					// Functions are called as usual:
+					myFunc(
+						someVar,
+						someVar2
+					);
+					
+					// Values are assigned via the = operator:
+					myVar = "myValue";
+					
+				// Functions for handling strings:
+					
+					// PREG Regular Expression
+					String.match(
+						/* Regular expression to match the value of this string
+							with */
+					);
+					
+				// Conversion
+					
+					/* string representation of numbers are directly translated
+						to their numeric forms, all else translates to the
+						integer 1 */
+						
+					// string converts to an array of characters
+					
+				// Control structures
+					
+					// switch - same as usual
+					switch (someVar) {
+						
+						case "something":
+							doSomething();
+							break;
+							
+					}
+					
+		/// nonscalar (@todo - find out what word this is)
 			
-// Arrays
-	
-	// Arrays can be created with the shorthand syntax:
-	myArray = [
-		new MyClass,
-		["Hello world"]
-	];
-	
-	// Arrays can have int/string keys
-	myArray[0] = "Hello world";
-	myArray["some key"] = "Hello world";
-	
-	// Conversion
-		
-		// array converts to an object with special keys (i.e. myObj{"0"})
-		
-		/* array converts to string such that the string values of the arrays
-			elements are strung together into a single string */
+			// Types
 			
-// String
-	
-	// Strings are just like any other string
-	myString = "my string"; // Or 'my string'
-	
-	// Strings can be concatenated with the + operator
-	myString = "Hello" + " " + "world";
-	
-	// @todo - Write functions for handling strings.
-	
-	// Conversion
+				// array
+					
+					// Arrays can be created with the shorthand syntax:
+					myArray = [
+						new MyClass,
+						"some other value"
+					];
+					
+					// Arrays have integer keys:
+					myArray[0] = "Hello world";
+					
+					// Conversion
+						
+						/* array converts to an object with special keys (e.g.
+							myObj{"0"}) */
+							
+						/* array converts to string such that the string values
+							of the arrays elements are strung together into a
+							single string */
+							
+				// object
+					
+					/*
+						Objects can (generically) be created as usual:
+							- Objects have the type of "object"
+							- Objects without class have a class name of null
+								(otherwise a string class name)
+					*/
+					myObject = {
+						property: "Hello world",
+						property2: true
+					};
+					
+					// Classes are quite as usual:
+					class MyClass extends SomeOtherClass {
+						
+						// Properties look like usual:
+						public static bool|null myProperty = true;
+						
+						// Constructors are called "constructor":
+						private static function constructor() {}
+						
+					}
+					
+					// Objects are accessed via dot-syntax:
+					Object.someProp;
+					
+					/* Methods are called the same as functions, except as a
+						child: */
+					Object.someMethod(
+						Object.someProp,
+						Object.someOtherProp
+					);
+					
+					// Conversion
+						
+						/* object converts to an array of values of all of the
+							properties of the converted object, filo */
+							
+			// Control structures
+				
+				// for - same as usual:
+				for (
+					i = 0;
+					i < someVar;
+					i++
+				) {/* Do something here */}
+				
+	// Operators
 		
-		// string converts to an array of characters
+		// ==
 		
-		/* string representation of numbers are directly translated to their
-		 	number forms, all else translates to the int 1 */
-			
-// number
-	
-	// int
-	myInt = 1;
-	
-	// float
-	myFloat = 1.1;
+		// !=
 		
-		/* Floats convert to ints automatically (e.g. the float 1.0 converts to
-			the int 1). */
-			
-	// Operators include +, -, /, *, <, <=, >, and >=.
-	
-	// Conversion
-		
-		// number translates to an equivalent string (1.5 = "1.5")
-		
-		// number translates to true if positive, false otherwise
-		
-// bool
-	
-	// Operators include !, ==, and !=.
-	
-	// Conversion
-		
-		// int
-			
-			// true converts to 1.
-			
-			// false converts to 0.
-			
-// null
-	
-	// Conversion
-		
-		// Converts to true.
